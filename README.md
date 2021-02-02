@@ -19,16 +19,21 @@ Status do Projeto: Em desenvolvimento :warning:
 ___
 
 ## Resumo
-Os scritps implementam vários modelos do estado da arte da aprendizagem profunda. Dentre eles estão AlexNet,ResNet-34 e MobileNet. Os modelos não se limitam as redes CNNs, assim este repositório contem  implementações de Máquinas de Boltzmann e Autocodificadoras. Além dos modelos implementados, os scripts fornem um protocolo de experimentos que possibilitam a visualiação de métricas, por meio de gráficos e tabelas, e a criação e restauração de estados dos experimentos. Todo o protocolo de experimentos é configurado no arquivo .json. Os modelos foram contruidos em Tensorflow e Keras. Os testes realizados são feitos nas bases CIFAR-10 e MNIST.
+Os scritps implementam vários modelos do estado da arte da aprendizagem profunda. Dentre eles estão AlexNet,ResNet-34 e MobileNet. Os modelos não se limitam as redes CNNs, assim este repositório contem implementações de Máquinas de Boltzmann e Autocodificadoras. Além dos modelos implementados, os scripts fornem um protocolo de experimentos que possibilita a visualiação de métricas de avaliação, a criação e restauração de estados dos experimentos. Todo o protocolo de experimentos é configurado no arquivo .json. Os modelos foram contruídos em Tensorflow. Os testes realizados são feitos nas bases CIFAR-10 e MNIST.
 
 Os códigos desenvolvidos fazem parte da monografia: Principais Configurações na Integração de Visão Computacional e Aprendizagem Profunda: Algoritmos e Técnicas. Monografia defendida na UTFPR
 
 ## Objetivos
-O objetivo geral deste projeto é fornecer modelos de apredizagem profunda construídos em Tensorflow para tarefas de visão computacional, que facilitem o desenvolvimento de aplicações de propósito geral, em especial a aplicaçoes de visão computacional.
+O objetivo geral deste projeto é fornecer modelos de apredizagem profunda construídos em Tensorflow para tarefas de visão computacional, que facilitem o desenvolvimento de aplicações de propósito geral, em especial a aplicações de visão computacional.
 Dentre alguns dos objetivos específicos do projeto estão.
   - Implementar um protocolo de experimento para realização de testes com modelos construídos
   - Visualizar principais métricas de avalição por meio de gráficos e tabelas
   - Criar um módulo para salvar os estados do experimentos
+  
+## Estrutura dos scripts
+
+
+## O arquivos Json
 
 ## Como Utilizar
 Para clonar e rodar está aplicação será necessário o [Git](https://git-scm.com) e o [Python3](https://www.python.org/downloads/) instalados em sua máquina. A partir da linha de comando descrita abaixo será possível clonar este repositório.
