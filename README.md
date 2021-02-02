@@ -4,34 +4,7 @@
     <img src="https://user-images.githubusercontent.com/26206052/86039037-3dfa0b80-ba18-11ea-9ab3-7e0696b505af.png" alt="LAMIA - Laboratório de                  Aprendizagem de Máquina e Imagens Aplicados à Indústria" width="400"></a>
 <br> <br>
 Principais Configurações na Integração de Visão Computacional e Aprendizagem Profunda: Algoritmos e Técnicas
-<h4 align="center"><a href="https://bit.ly/paineldadoscovid19" target="_blank">Informe Epidemiológico Inteligente</a></h4>
 </h1>
-
-<p align="center">
-  <a href="https://www.lamia.sh.utfpr.edu.br/">
-    <img src="https://img.shields.io/badge/Follow-Lab%20Page-blue" alt="Lab">
-  <a href="https://bit.ly/paineldadoscovid19">
-    <img src="https://img.shields.io/badge/Application-PowerBI-black" alt="Application">
-  <a href="https://github.com/lamia-utfpr/IC02-2019-Painel-de-Dados-Covid19/blob/Produ%C3%A7%C3%A3o/LICENSE">
-    <img src="https://img.shields.io/github/license/lamia-utfpr/IC02-2019-Painel-de-Dados-Covid19" alt="License">
-  <a href="https://github.com/lamia-utfpr/IC02-2019-Painel-de-Dados-Covid19">
-    <img src="https://img.shields.io/badge/Build-2.0-green" alt="Build 2.0">
-   </a></a></a></a>
-</p>
-
-<p align="center">
-<b>Equipe:</b>  
-<br>
-Thiago Naves <a href="https://github.com/tfnaves" target="_blank"> (Naves, T. F.)</a> - Coordenador  <br>
-</p>
-
-<p align="center">
-<b>Parceiros:</b>  
-<br>
-Sistema Regional de Inovação do Oeste do Paraná <a href="https://sri.oesteemdesenvolvimento.com.br/" target="_blank"> (SRI Iguassu Valley )</a>   <br>
-Koredata <a href="https://biopark.com.br/site/pt/blog_detalhes/nova-residente-no-biopark-atua-com-solues-em-inteligncia-de-mercado" target="_blank"> (Koredata)</a>  <br>
-</p>
-
 
 <p align="center">  
 <b>Grupo</b>: <a href="https://www.lamia.sh.utfpr.edu.br/" target="_blank">LAMIA - Laboratório de Aprendizado de Máquina e Imagens Aplicados à Indústria </a> <br>
@@ -43,30 +16,19 @@ Koredata <a href="https://biopark.com.br/site/pt/blog_detalhes/nova-residente-no
 <br>
 Status do Projeto: Em desenvolvimento :warning:
 </p>
-
-<p align="center">
-  <a href="https://www.loom.com/share/078eb1ade510400ea0826053973d385e">
-    <img src="https://user-images.githubusercontent.com/26206052/86052555-8c65d500-ba2d-11ea-8265-0e1acd1d521c.gif" width="900">
-  </a>
-</p>
-
 ___
 
 ## Resumo
-O projeto utiliza das tecnologias de ciência dos dados para desenvolver uma plataforma de monitoramento e análise inteligente dos dados do Covid-19 em relação a confirmados, óbitos, tipos de óbitos, suspeitos, recuperados, leitos, dentre outros dados. A plataforma possui foco maior no estado do Paraná e faz monitoramento dos demais estados do Brasil e dos países do restante do mundo. O painel também possui a finalidade de manter as pessoas informadas acerca dos avanços do coronavírus e pode ser acessado [paineldadoscovid19](https://bit.ly/paineldadoscovid19).
+Os scritps implementam vários modelos do estado da arte da aprendizagem profunda. Dentre eles estão AlexNet,ResNet-34 e MobileNet. Os modelos não se limitam as redes CNNs, assim este repositório contem  implementações de Máquinas de Boltzmann e Autocodificadoras. Além dos modelos implementados, os scripts fornem um protocolo de experimentos que possibilitam a visualiação de métricas, por meio de gráficos e tabelas, e a criação e restauração de estados dos experimentos. Todo o protocolo de experimentos é configurado no arquivo .json. Os modelos foram contruidos em Tensorflow e Keras. Os testes realizados são feitos nas bases CIFAR-10 e MNIST.
 
-O código disponível no github são dos scripts necessários para obter os dados e cadastrá-los no banco de dados, as visualizações da plataforma são desenvolvidas utilizando Microsoft Power BI.
-
-![Painel 3](https://user-images.githubusercontent.com/26206052/86056446-d94caa00-ba33-11ea-9738-f8f5713fd5dd.png)
+Os códigos desenvolvidos fazem parte da monografia: Principais Configurações na Integração de Visão Computacional e Aprendizagem Profunda: Algoritmos e Técnicas. Monografia defendida na UTFPR
 
 ## Objetivos
-O objetivo principal do projeto Painel Paraná Covid-19 é monitorar de forma inteligente os dados do coronavírus prioritariamente no estado do Paraná e no restante do Brasil, com dados atualizados em tempo real e com uso de algoritmos de inteligência artificial para executar predições e construir relatórios para tomadas de decisão por parte dos órgãos públicos e privados que atuam no combate do covid19.
-
-Dentre alguns dos objetivos gerais do projeto estão.
-  - Coletar dados sobre o covid-19 no âmbito estadual, nacional e mundial em tempo real formando uma base de dados conscistente e confiável
-  - Construir esquemas de visualização da informação de modo que a interpretação dos dados seja simples e direta por parte do público
-  - Monitorar a situação do coronavírus utilizando de algoritmos de inteligência artificial para executar predições acerca da quantidade de pessoas e recursos médicos que serão afetados nos dias subsquentes formando conhecimento relevante
-  - Gerar relatórios técnicos com tomadas de decisão para auxiliar as os órgãos públicos e privados no combate ao covid-19
+O objetivo geral deste projeto é fornecer modelos de apredizagem profunda construídos em Tensorflow para tarefas de visão computacional, que facilitem o desenvolvimento de aplicações de propósito geral, em especial a aplicaçoes de visão computacional.
+Dentre alguns dos objetivos específicos do projeto estão.
+  - Implementar um protocolo de experimento para realização de testes com modelos construídos
+  - Visualizar principais métricas de avalição por meio de gráficos e tabelas
+  - Criar um módulo para salvar os estados do experimentos
 
 ## Como Utilizar
 Para clonar e rodar está aplicação será necessário o [Git](https://git-scm.com) e o [Python3](https://www.python.org/downloads/) instalados em sua máquina. A partir da linha de comando descrita abaixo será possível clonar este repositório.
