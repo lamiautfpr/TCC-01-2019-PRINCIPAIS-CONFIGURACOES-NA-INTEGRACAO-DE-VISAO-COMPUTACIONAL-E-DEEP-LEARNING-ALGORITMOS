@@ -19,7 +19,7 @@ Status do Projeto: Em desenvolvimento :warning:
 ___
 
 ## Resumo
-Os scritps implementam vários modelos do estado da arte da aprendizagem profunda. Dentre eles estão AlexNet,ResNet-34 e MobileNet. Os modelos não se limitam as redes CNNs, assim este repositório contem implementações de Máquinas de Boltzmann e Autocodificadoras. Além dos modelos implementados, os scripts fornem um protocolo de experimentos que possibilita a visualiação de métricas de avaliação, a criação e restauração de estados dos experimentos. Todo o protocolo de experimentos é configurado no arquivo .json. Os modelos foram contruídos em Tensorflow. Os testes realizados são feitos nas bases CIFAR-10 e MNIST.
+Os scritps implementam vários modelos do estado da arte da aprendizagem profunda. Dentre eles estão AlexNet,ResNet-34 e MobileNet. Os modelos não se limitam as redes CNNs, assim este repositório contem implementações de Máquinas de Boltzmann e Autocodificadoras. Além dos modelos implementados, os scripts fornecem um protocolo de experimentos que possibilita a visualiação de métricas de avaliação, a criação e restauração de estados dos experimentos. Todo o protocolo de experimentos é configurado no arquivo .json. Os modelos foram contruídos em Tensorflow. Os testes realizados são feitos nas bases CIFAR-10 e MNIST.
 
 Os códigos desenvolvidos fazem parte da monografia: Principais Configurações na Integração de Visão Computacional e Aprendizagem Profunda: Algoritmos e Técnicas. Monografia defendida na UTFPR
 
@@ -31,7 +31,16 @@ Dentre alguns dos objetivos específicos do projeto estão.
   - Criar um módulo para salvar os estados do experimentos
   
 ## Estrutura dos scripts
-
+<table>
+  <tr>
+    <td> arquivo </td>
+    <td> Descrição </td>
+  </tr>
+  <tr>
+    <td> model.py </td>
+    <td> Módulo com implementação dos modelos e classes de suporte</td>
+  </tr>
+ </table>
 
 ## O arquivos Json
 
