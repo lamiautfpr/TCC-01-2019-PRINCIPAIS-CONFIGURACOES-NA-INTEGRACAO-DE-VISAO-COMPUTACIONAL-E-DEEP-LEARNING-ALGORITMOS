@@ -36,10 +36,62 @@ Dentre alguns dos objetivos específicos do projeto estão.
     <td> arquivo </td>
     <td> Descrição </td>
   </tr>
+
   <tr>
-    <td> model.py </td>
+    <td> checkpoints.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> dataset.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> experiment.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> main.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> metrics.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> models.py </td>
     <td> Módulo com implementação dos modelos e classes de suporte</td>
   </tr>
+
+  <tr>
+    <td> optmizers.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> parameters.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> state.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> utils.py</td>
+    <td> </td>
+  </tr>
+
+  <tr>
+    <td> validation.py</td>
+    <td> </td>
+  </tr>
+
  </table>
 
 ## O arquivos Json
