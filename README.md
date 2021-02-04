@@ -140,8 +140,7 @@ O código abaixo é um exemplo de configuração de experimento. O exemplos ilus
 ```
 
 As chaves e valores são mmostrados a seguir:
- - models: alexnet, resnet, moiblenet, autoencoder, bm. tipo Vetor de modelos;
- - dataset: cifar-10 or mnist.  
+
 <table>
   <tr>
     <td>chave</td>
