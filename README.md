@@ -100,6 +100,139 @@ Dentre alguns dos objetivos específicos do projeto estão.
  </table>
 
 ## O arquivo Json
+O código abaixo é um exemplo de configuração de experimento. O exemplos ilustra todos as chaves possíveis e com algumas de seus valores.
+```json
+{
+    "models": [
+        "alexnet"
+    ],
+    "dataset": "mnist",
+    "processing": {
+        "flat": false,
+        "concat": true,
+        "expand": false,
+        "normalize": false
+    },
+    "optimizer": "sgd",
+    "opt_params": {
+        "learning_rate": 0.01,
+        "momentum": 0.9,
+        "decay": 0.0001
+    },
+    "loss": "categorical_crossentropy",
+    "metrics": [
+        "categorical_accuracy",
+        "Precision",
+        "Recall",
+        "AUC",
+        "f1_score"
+    ],
+    "initializers": false,
+    "epochs": 400,
+    "batch": 256,
+    "data_augmentation": false,
+    "decay": true,
+    "dir": "/content/drive/My Drive/TCC/",
+    "exp":{
+        "holdout": [10]
+    }
+}
+```
+
+As chaves e valores são mmostrados a seguir:
+ - models: alexnet, resnet, moiblenet, autoencoder, bm. tipo Vetor de modelos;
+ - dataset: cifar-10 or mnist.  
+<table>
+  <tr>
+    <td>chave</td>
+    <td>valor</td>
+    <td>tipo</td>
+  </tr>
+
+  <tr>
+    <td>model</td>
+    <td>alexnet, resnet, moiblenet, autoencoder, bm</td>
+    <td>vetor de string</td>
+  </tr>
+
+  <tr>
+    <td>dataset</td>
+    <td>cifar10, mnist</td>
+    <td>string</td>
+  </tr>
+
+  <tr>
+    <td>processing</td>
+    <td>dicionário com as chaves flat, concat, expand e normalize</td>
+    <td>dicionário com valores booleanos</td>
+  </tr>
+
+  <tr>
+    <td>optimizer</td>
+    <td>sgd, adam</td>
+    <td>string</td>
+  </tr>
+
+  <tr>
+    <td>opt_params</td>
+    <td>dicionário com as chaves learning_rate, momento, decay</td>
+    <td>dicionário com valores decimais</td>
+  </tr>
+
+  <tr>
+    <td>loss</td>
+    <td>categorical_crossentropy</td>
+    <td>string</td>
+  </tr>
+
+  <tr>
+    <td>metrics</td>
+    <td>categorical_accuracy, Precision, Recall, AUC, f1_score</td>
+    <td>vetor de strings</td>
+  </tr>
+
+  <tr>
+    <td>initializers</td>
+    <td>true ou false</td>
+    <td>boolean</td>
+  </tr>
+
+  <tr>
+    <td>epochs</td>
+    <td>qualquer valor inteiro</td>
+    <td>inteiro/td>
+  </tr>
+
+  <tr>
+    <td>batch</td>
+    <td>qualquer valor inteiro</td>
+    <td>inteiro</td>
+  </tr>
+
+  <tr>
+    <td>data_augmentation</td>
+    <td>true ou false</td>
+    <td>boolean</td>
+  </tr>
+
+  <tr>
+    <td>decay</td>
+    <td>true ou false</td>
+    <td>boolean</td>
+  </tr>
+
+  <tr>
+    <td>dir</td>
+    <td>path para salvar o experimento</td>
+    <td>string</td>
+  </tr>
+
+  <tr>
+    <td>exp</td>
+    <td>dicionário com o método de validação, holdout ou kfold</td>
+    <td>dicionário, valores como vetores de inteiros</td>
+  </tr>
+</table>
 
 ## Como Utilizar
 Para clonar e rodar está aplicação será necessário o [Git](https://git-scm.com) e o [Python3](https://www.python.org/downloads/) (python 3.6 ou superior) instalados em sua máquina. A partir da linha de comando descrita abaixo será possível clonar este repositório.
@@ -134,7 +267,7 @@ $ sudo pip3 install -r requeriments.txt
 Com a criação do ambiente finalizada, configure o arquivo experiment.json com os dados do experimento que queira executar (veja a seja sobre o arquivo json para cada campo). Após a configuração do experimento utilize o comando a baixo:
 
 ```bash
-$ python src/main.py config/experiment.json
+$ python src/main.py src/config/experiment.json
 ```
 
 O comando descrito acima construirá todos o modelos e executará os testes com o protocolo de expereimento escolhido. É recomendado que os modelos implementados sejam executados sobre GPU ou TPU, dada a complexidade computacional exigida por algoritmos baseados em aprendizagem profunda. O [Google Colaboratory](https://colab.research.google.com/) pode ser utilizado para realização de testes em aceleradores gráficos. Também recomendamos a replicação dos resultados da monografia, afim verificar se todas as cofiguraçoes foram feitas corretamente. Para isso, copie o protocolo descrito na monografia de referência.
