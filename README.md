@@ -270,7 +270,7 @@ Com a criação do ambiente finalizada, configure o arquivo experiment.json com 
 $ python src/main.py src/config/experiment.json
 ```
 
-O comando descrito acima construirá todos o modelos e executará os testes com o protocolo de expereimento escolhido. É recomendado que os modelos implementados sejam executados sobre GPU ou TPU, dada a complexidade computacional exigida por algoritmos baseados em aprendizagem profunda. O [Google Colaboratory](https://colab.research.google.com/) pode ser utilizado para realização de testes em aceleradores gráficos. Também recomendamos a replicação dos resultados da monografia, afim verificar se todas as cofiguraçoes foram feitas corretamente. Para isso, copie o protocolo descrito na monografia de referência.
+O comando descrito acima construirá todos o modelos e executará os testes com o protocolo de experimento escolhido. É recomendado que os modelos implementados sejam executados sobre GPU ou TPU, dada a complexidade computacional exigida por algoritmos baseados em aprendizagem profunda. O [Google Colaboratory](https://colab.research.google.com/) pode ser utilizado para realização de testes em aceleradores gráficos. Também recomendamos a replicação dos resultados da monografia, afim verificar se todas as cofiguraçoes foram feitas corretamente. Para isso, copie o protocolo descrito na monografia de referência.
 
 As bibliotecas utilizadas no projeto estão presentes no arquivo requeriments.txt.
 
