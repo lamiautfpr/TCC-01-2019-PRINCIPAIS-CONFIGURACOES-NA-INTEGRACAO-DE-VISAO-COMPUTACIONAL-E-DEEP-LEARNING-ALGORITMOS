@@ -94,17 +94,17 @@ Dentre alguns dos objetivos específicos do projeto estão.
 
  </table>
 
-## O arquivos Json
+## O arquivo Json
 
 ## Como Utilizar
-Para clonar e rodar está aplicação será necessário o [Git](https://git-scm.com) e o [Python3](https://www.python.org/downloads/) instalados em sua máquina. A partir da linha de comando descrita abaixo será possível clonar este repositório.
+Para clonar e rodar está aplicação será necessário o [Git](https://git-scm.com) e o [Python3](https://www.python.org/downloads/) (python 3.6 ou superior) instalados em sua máquina. A partir da linha de comando descrita abaixo será possível clonar este repositório.
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/lamia-utfpr/IC02-2019-Painel-de-Dados-Covid19.git
+$ git clone https://github.com/lamiautfpr/TCC-01-2019-PRINCIPAIS-CONFIGURACOES-NA-INTEGRACAO-DE-VISAO-COMPUTACIONAL-E-DEEP-LEARNING-ALGORITMOS.git
 
 # Go into the repository
-$ cd IC02-2019-Painel-de-Dados-Covid19
+$ cd TCC-01-2019-PRINCIPAIS-CONFIGURACOES-NA-INTEGRACAO-DE-VISAO-COMPUTACIONAL-E-DEEP-LEARNING-ALGORITMOS
 ```
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use the command prompt from your IDE.
 
@@ -118,50 +118,48 @@ $ virtualenv venv
 $ source venv/bin/activate
 ```
 
+Note: Este passo pode ser ignorado caso não possua uma ambiente virtual. Ambientes virtuais são recomendados para a execução de aplicações em python.
+
 Com o virtual enviroment criado e sendo executa será necessário baixar as bibliotecas presentes no requeriments.txt. Para isso basta utilizar o pip3 para fazer a instalação recursiva de todas as bibliotecas presentes no arquivo de texto. Certifique-se que o shell está no diretório do requeriments. Recomenda-se a utilização da execução em super usuário utilizando sudo.
 
 ```bash
 # Install all requeriments
 $ sudo pip3 install -r requeriments.txt
 ```
-Com a criação do ambiente finalizada, configure o arquivo credentials.json com as credenciais de seu banco de dados e voalá! É só rodar o arquivo main.py para inserir todas as bases em seu banco de dados. É importante lembrar que não se utilize nenhum lint do Python na compilação dos algoritmos, pois o mesmo demonstra alguns bugs para importação de packages.
+Com a criação do ambiente finalizada, configure o arquivo experiment.json com os dados do experimento que queira executar (veja a seja sobre o arquivo json para cada campo). Após a configuração do experimento utilize o comando a baixo:
+
+```bash
+$ python src/main.py config/experiment.json
+```
+
+O comando descrito acima construirá todos o modelos e executará os testes com o protocolo de expereimento escolhido. É recomendado que os modelos implementados sejam executados sobre GPU ou TPU, dada a complexidade computacional exigida por algoritmos baseados em aprendizagem profunda. O [Google Colaboratory](https://colab.research.google.com/) pode ser utilizado para realização de teste em aceleradores gráficos. Também recomendamos a replicação dos resultados da monografia, afim verificar se todas as cofiguraçãoes foram corretamnete. Para isso, copie o protocolo  descrito na monografia de referência.
 
 As bibliotecas utilizadas no projeto estão presentes no arquivo requeriments.txt.
 
 ```bash
-astroid==2.4.2
-autopep8==1.5.3
-certifi==2020.6.20
-chardet==3.0.4
-colorama==0.4.3
-flake8==3.8.3
-idna==2.10
-isort==4.3.21
-lazy-object-proxy==1.4.3
-mccabe==0.6.1
-mypy==0.782
-mypy-extensions==0.4.3
+google-auth==1.18.0
+google-auth-oauthlib==0.4.1
+google-pasta==0.2.0
+Keras-Preprocessing==1.1.2
+matplotlib==3.3.0
 numpy==1.19.0
 pandas==1.0.5
-psycopg2==2.8.5
-pycodestyle==2.6.0
-pyflakes==2.2.0
-pylint==2.5.3
-python-dateutil==2.8.1
-pytz==2020.1
-requests==2.24.0
-schedule==0.6.0
-six==1.15.0
-SQLAlchemy==1.3.18
-toml==0.10.1
-typed-ast==1.4.1
-typing-extensions==3.7.4.2
-urllib3==1.25.9
-wrapt==1.12.1
+Pillow==7.1.2
+scikit-learn==0.23.1
+scipy==1.4.1
+seaborn==0.10.1
+sklearn==0.0
+tensorboard==2.2.2
+tensorboard-plugin-wit==1.7.0
+tensorflow-cpu==2.2.0
+tensorflow-estimator==2.2.0
 ```
-## Tecnologias
 
-Painel Paraná Inteligente Covid-19 usa os seguintes algoritmos e tecnologias:
+## Considerações na instalação do Tensorflow
+
+## Modelos
+
+A aplicação usa os seguintes algoritmos:
 
 * [Regressão Logística](https://medium.com/turing-talks/turing-talks-14-modelo-de-predi%C3%A7%C3%A3o-regress%C3%A3o-log%C3%ADstica-7b70a9098e43) - executar predições
 * [Regressão Linear](https://medium.com/@lucasoliveiras/regress%C3%A3o-linear-do-zero-com-python-ef74a81c4b84) - executar predições
