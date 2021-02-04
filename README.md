@@ -200,7 +200,7 @@ As chaves e valores são mmostrados a seguir:
   <tr>
     <td>epochs</td>
     <td>qualquer valor inteiro</td>
-    <td>inteiro/td>
+    <td>inteiro</td>
   </tr>
 
   <tr>
