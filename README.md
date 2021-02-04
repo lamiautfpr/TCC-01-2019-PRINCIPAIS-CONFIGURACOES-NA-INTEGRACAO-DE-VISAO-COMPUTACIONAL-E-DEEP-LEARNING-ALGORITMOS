@@ -84,7 +84,7 @@ Dentre alguns dos objetivos específicos do projeto estão.
 
   <tr>
     <td>state.py</td>
-    <td>Módulo responsável pelo gerenciamento dos estados do experimento. Um estado é caracterizado por: id do experimento; número de épocas; protocolo de validação e o camhinho onde serão salvos os estados. o protocolo de validação é definido por métodos de validação de modelos preditivos. Dois método foram implementados K-fold e Hold-out. Cada método possui seu próprio estado e este estado é salvo no estado geral do experimento.</td>
+    <td>Módulo responsável pelo gerenciamento dos estados do experimento. Um estado é caracterizado por: id do experimento; número de épocas; protocolo de validação e o camhinho onde serão salvos os estados. O protocolo de validação é definido por métodos de validação de modelos preditivos. Dois método foram implementados K-fold e Hold-out. Cada método possui seu próprio estado e este estado é salvo no estado geral do experimento.</td>
   </tr>
 
   <tr>
@@ -166,6 +166,7 @@ tensorflow-estimator==2.2.0
 
 A aplicação usa os seguintes algoritmos:
 
+<!--
 * [Regressão Logística](https://medium.com/turing-talks/turing-talks-14-modelo-de-predi%C3%A7%C3%A3o-regress%C3%A3o-log%C3%ADstica-7b70a9098e43) - executar predições
 * [Regressão Linear](https://medium.com/@lucasoliveiras/regress%C3%A3o-linear-do-zero-com-python-ef74a81c4b84) - executar predições
 * [Mínimos Quadrados](https://www.scielo.br/scielo.php?pid=S0100-40422007000200020&script=sci_arttext) - comparar predições geradas e efetuar ajustes
@@ -177,7 +178,9 @@ A aplicação usa os seguintes algoritmos:
 * [Numpy](https://numpy.org/) - plotagens de dados e gráficos
 * [Pandas](https://pandas.pydata.org/) - execução de algoritmos de predição
 * [Beautiful Soap](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - extração automática de dados
+-->
 
+<!--
 ## Citação
 
 Se você utliza e quer citar o projeto em sua pesquisa, por favor utilize o formato de citação abaixo:
@@ -188,3 +191,5 @@ Se você utliza e quer citar o projeto em sua pesquisa, por favor utilize o form
       journal={IEEE Conference on Big Data},
       year={2020}
     }
+-->
+
