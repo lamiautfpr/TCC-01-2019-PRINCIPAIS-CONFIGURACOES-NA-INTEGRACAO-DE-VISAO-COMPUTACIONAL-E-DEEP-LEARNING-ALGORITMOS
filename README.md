@@ -33,63 +33,68 @@ Dentre alguns dos objetivos específicos do projeto estão.
 ## Estrutura dos scripts
 <table>
   <tr>
-    <td> arquivo </td>
-    <td> Descrição </td>
+    <td>arquivo </td>
+    <td>Descrição </td>
   </tr>
 
   <tr>
-    <td> checkpoints.py</td>
-    <td> </td>
+    <td>checkpoints.py</td>
+    <td>Módulo responsável por salvar pesos e os históricos das métricas do modelo em execução. WeightsCheckpoint e HistoryCheckpoint são classes que extendem a classe keras.callbacks.Callback. Os pesos e históricos são salvados a cada 100 épocas. Esta configuração pode ser alterada diretamente no módulo checkpoints.</td>
   </tr>
 
   <tr>
-    <td> dataset.py</td>
-    <td> </td>
+    <td>dataset.py</td>
+    <td>Possui uma única classe: DatasetFacotry. Esta classe é responsável por gerenciar as bases de dados disponíveis, além de restaurar os indexs da base de dados anterior, afim de dá continuaidade ao experimento interrompido.</td>
   </tr>
 
   <tr>
-    <td> experiment.py</td>
-    <td> </td>
+    <td>experiment.py</td>
+    <td>Constrói o experimento definido no arquivo experiment.json. Assim, define um novo estado ou recarrega um já existente, se o experimento não foi finalizado. O diretório dos estados do experimento são definidos no arquivo json. Este módulo possui apenas uma classe: Experiment. Após contruir ou recarregar o estado, a classe Experiment inicia o experimento.</td>
   </tr>
 
   <tr>
-    <td> main.py</td>
-    <td> </td>
+    <td>experiment.json</td>
+    <td>Arquivo Json: chave-valor.  Aqui é definido modelos, otimizadores, protocolos e outras chaves que caracterizam o experimento. Veja a seção "o arquivo Json" para mais informações das possiveis chaves e seus respectivos valores.</td>
   </tr>
 
   <tr>
-    <td> metrics.py</td>
-    <td> </td>
+    <td>main.py</td>
+    <td>Módulo que executa a aplicação</td>
   </tr>
 
   <tr>
-    <td> models.py </td>
-    <td> Módulo com implementação dos modelos e classes de suporte</td>
+    <td>metrics.py</td>
+    <td>Neste módulo está definido as métricas de avaliação disponíveis. Aqui também pode ser implementadas novas métricas</td>
   </tr>
 
   <tr>
-    <td> optmizers.py</td>
-    <td> </td>
+    <td>models.py </td>
+    <td>Módulo com implementação dos modelos e classes de suporte. Veja a seção "Modelos" para consultar todos os algoritmos disponíveis.</td>
   </tr>
 
   <tr>
-    <td> parameters.py</td>
-    <td> </td>
+    <td>optmizers.py</td>
+    <td>Neste módulo está definido os otimizadores. Os otimizadores são os mesmo que estão disponíveis pelo Keras. Este módulo serve apenas como um adaptador.</td>
   </tr>
 
   <tr>
-    <td> state.py</td>
-    <td> </td>
+    <td>save.py</td>
+    <td>Módulo auxiliar para salvar históricos, modelos, resultados e estados.</td>
   </tr>
 
   <tr>
-    <td> utils.py</td>
-    <td> </td>
+    <td>state.py</td>
+    <td>Módulo responsável pelo gerenciamento dos estados do experimento. Um estado é caracterizado por: id do experimento; número de épocas; protocolo de validação e o camhinho onde serão salvos os estados. o protocolo de validação é definido por métodos de validação de modelos preditivos. Dois método foram implementados K-fold e Hold-out. Cada método possui seu próprio estado e este estado é salvo no estado geral do experimento.</td>
   </tr>
 
   <tr>
-    <td> validation.py</td>
-    <td> </td>
+    <td>utils.py</td>
+    <td>Módulo com diversas classes e funções para diversos fins. Neste móudulo é encontrado classes para plotar gráficos e funções que auxiliam na construção de modelos</td>
+  </tr>
+
+  <tr>
+    <td>validation.py</td>
+    <td>Os métodos de validação são definidos neste módulo como classes. Os métodos disponíveis são métodos de validação cruzada: K-fold e Hold-out.</td>
   </tr>
 
  </table>
@@ -132,7 +137,7 @@ Com a criação do ambiente finalizada, configure o arquivo experiment.json com 
 $ python src/main.py config/experiment.json
 ```
 
-O comando descrito acima construirá todos o modelos e executará os testes com o protocolo de expereimento escolhido. É recomendado que os modelos implementados sejam executados sobre GPU ou TPU, dada a complexidade computacional exigida por algoritmos baseados em aprendizagem profunda. O [Google Colaboratory](https://colab.research.google.com/) pode ser utilizado para realização de teste em aceleradores gráficos. Também recomendamos a replicação dos resultados da monografia, afim verificar se todas as cofiguraçãoes foram corretamnete. Para isso, copie o protocolo  descrito na monografia de referência.
+O comando descrito acima construirá todos o modelos e executará os testes com o protocolo de expereimento escolhido. É recomendado que os modelos implementados sejam executados sobre GPU ou TPU, dada a complexidade computacional exigida por algoritmos baseados em aprendizagem profunda. O [Google Colaboratory](https://colab.research.google.com/) pode ser utilizado para realização de testes em aceleradores gráficos. Também recomendamos a replicação dos resultados da monografia, afim verificar se todas as cofiguraçoes foram feitas corretamente. Para isso, copie o protocolo descrito na monografia de referência.
 
 As bibliotecas utilizadas no projeto estão presentes no arquivo requeriments.txt.
 
