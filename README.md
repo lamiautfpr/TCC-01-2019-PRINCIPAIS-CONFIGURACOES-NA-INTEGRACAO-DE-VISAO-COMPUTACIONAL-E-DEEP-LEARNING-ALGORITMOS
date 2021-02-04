@@ -100,7 +100,7 @@ Dentre alguns dos objetivos específicos do projeto estão.
  </table>
 
 ## O arquivo Json
-O código abaixo é um exemplo de configuração de experimento. O exemplos ilustra todos as chaves possíveis e com algumas de seus valores.
+O código abaixo é um exemplo de configuração de experimento. O exemplos ilustra todos as chaves possíveis e com alguns de seus valores.
 ```json
 {
     "models": [
