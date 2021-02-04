@@ -294,6 +294,28 @@ tensorflow-estimator==2.2.0
 
 ## Considerações na instalação do Tensorflow
 
+O método mais simples de instalação do Tensorflow é utilizando o pacote pip disponível no repositório oficial do python. Entretanto, pode apresentar erros se a máquina alvo não suportar as configurações do pacote construído pela Google. Um erro recente é o suporte ao AVX (Advanced Vector Extensions) da CPU, visto que processadores antigos não possuem esta flag. O erro é mostrado abaixo:
+
+```bash
+Illegal instruction (core dumped)
+```
+
+
+Para verificar se a máquina alvo possui a flag AVX utilize:
+
+```bash
+more /proc/cpuinfo | grep flags
+```
+
+Existem algumas formas de contornar este problema. A primeira dela é compilação do Tensorflow na própria máquina. Com a compilação na máquina alvo é possivel otimizar o Tensorflow com as flags disponíveis na própria CPU. O site oficial do [Tensorflow](https://www.tensorflow.org/install/source) mostra os passos para a compilação personlizada. outros sites podem auxiliar na compilação, veja <https://tech.amikelive.com/node-882/how-to-build-and-install-the-latest-tensorflow-without-cuda-gpu-and-with-optimized-cpu-performance-on-ubuntu/>
+e <https://tech.amikelive.com/node-887/how-to-resolve-error-illegal-instruction-core-dumped-when-running-import-tensorflow-in-a-python-program/>. Este método é dispendioso e dependedo da máquina pode levar dias para o término.
+
+A segunda forma é a utilização do Tensorflow já compilado sem AVX pelo site [BountySource](https://www.bountysource.com/teams/tensorflow-community-wheels/issues?tracker_ids=54259063). Este site possui um repositório de wheels do Tensorflow mantidas por usuários. Lá é possivel o download de pacotes sem AVX. Para instalar pacotes no pip que não estão no repositório oficial utilize o comando:
+
+```bash
+pip install <caminho do arquivo.whl>
+```
+
 ## Modelos
 
 A aplicação usa os seguintes algoritmos:
