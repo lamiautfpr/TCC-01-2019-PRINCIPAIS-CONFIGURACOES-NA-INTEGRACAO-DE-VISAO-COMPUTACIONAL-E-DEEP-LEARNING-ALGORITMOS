@@ -320,19 +320,11 @@ pip install <caminho do arquivo.whl>
 
 A aplicação usa os seguintes algoritmos:
 
-<!--
-* [Regressão Logística](https://medium.com/turing-talks/turing-talks-14-modelo-de-predi%C3%A7%C3%A3o-regress%C3%A3o-log%C3%ADstica-7b70a9098e43) - executar predições
-* [Regressão Linear](https://medium.com/@lucasoliveiras/regress%C3%A3o-linear-do-zero-com-python-ef74a81c4b84) - executar predições
-* [Mínimos Quadrados](https://www.scielo.br/scielo.php?pid=S0100-40422007000200020&script=sci_arttext) - comparar predições geradas e efetuar ajustes
-* [Árvores de Decisão](https://www.vooo.pro/insights/um-tutorial-completo-sobre-a-modelagem-baseada-em-tree-arvore-do-zero-em-r-python/) - gerar tomadas de decisão com base em condições pré-estabelecidas
-* [Tabula-py](https://tabula-py.readthedocs.io/en/latest/tabula.html/) - tabula-py é um wrapper Python simples de tabula-java, que pode ler a tabelad de arquivos PDF.
-* [SQLAlchemy](https://docs.sqlalchemy.org/en/13/) - O SQLAlchemy SQL Toolkit e o Object Relational Mapper são um conjunto abrangente de ferramentas para trabalhar com bancos de dados e Python.
-* [Requests](https://requests.readthedocs.io/en/master/) - Utilizada para fazer requisições HTTP pelo Python.
-* [Schedule](https://pypi.org/project/schedule/) - O Schedule permite executar funções Python (ou qualquer outra chamada) periodicamente em intervalos predeterminados.
-* [Numpy](https://numpy.org/) - plotagens de dados e gráficos
-* [Pandas](https://pandas.pydata.org/) - execução de algoritmos de predição
-* [Beautiful Soap](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - extração automática de dados
--->
+* [AlexNet](https://dl.acm.org/doi/10.1145/3065386) - Rede convolucional com 8 camadas pioneira no uso de GPU para o seu treinamento
+* [ResNet](https://arxiv.org/abs/1512.03385) - Rede convolucional com o uso de blocos residuais. Rede super profunda.
+* [MobileNet](https://arxiv.org/abs/1704.04861) - Rede Convolucional com para dispotivos moveis ou com restrições computacionais.
+* [Autoencoder para redução de dimensionalidade](http://www.mitpressjournals.org/doi/10.1162/neco.2006.18.7.1527) - Rede Autoencoder especializada em reduzir a dimensionalidade dos dados.
+* [Autoencoder de filtragem de ruído](https://dl.acm.org/doi/10.1145/1390156.1390294) - Rede Autoencoder especializada em filtrar ruídos do dados.
 
 <!--
 ## Citação
