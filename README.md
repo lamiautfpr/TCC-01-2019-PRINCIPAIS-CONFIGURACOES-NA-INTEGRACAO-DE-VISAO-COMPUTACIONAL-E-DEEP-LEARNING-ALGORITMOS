@@ -19,9 +19,9 @@ Status do Projeto: Em desenvolvimento :warning:
 ___
 
 ## Resumo
-Os scritps implementam vários modelos do estado da arte da aprendizagem profunda. Dentre eles estão AlexNet,ResNet-34 e MobileNet. Os modelos não se limitam as redes CNNs, assim este repositório contem implementações de Máquinas de Boltzmann e Autocodificadoras. Além dos modelos implementados, os scripts fornecem um protocolo de experimentos que possibilita a visualiação de métricas de avaliação, a criação e restauração de estados dos experimentos. Todo o protocolo de experimentos é configurado no arquivo .json. Os modelos foram contruídos em Tensorflow. Os testes realizados são feitos nas bases CIFAR-10 e MNIST.
+Os scritps implementam vários modelos do estado da arte da aprendizagem profunda. Dentre eles estão AlexNet, ResNet-34 e MobileNet. Os modelos não se limitam as redes CNNs, assim este repositório contem implementações de Máquinas de Boltzmann e Autocodificadoras. Além dos modelos implementados, os scripts fornecem um protocolo de experimentos que possibilita a visualiação de métricas de avaliação, a criação e restauração de estados dos experimentos. Todo o protocolo de experimentos é configurado no arquivo .json. Os modelos foram contruídos em Tensorflow. Os testes realizados são feitos nas bases CIFAR-10 e MNIST.
 
-Os códigos desenvolvidos fazem parte da monografia: Principais Configurações na Integração de Visão Computacional e Aprendizagem Profunda: Algoritmos e Técnicas. Monografia defendida na UTFPR
+Os códigos desenvolvidos fazem parte da [monografia](https://www.lamia.sh.utfpr.edu.br/work/1): Principais Configurações na Integração de Visão Computacional e Aprendizagem Profunda: Algoritmos e Técnicas. Monografia defendida na UTFPR
 
 ## Objetivos
 O objetivo geral deste projeto é fornecer modelos de apredizagem profunda construídos em Tensorflow para tarefas de visão computacional, que facilitem o desenvolvimento de aplicações de propósito geral, em especial a aplicações de visão computacional.
@@ -39,7 +39,7 @@ Dentre alguns dos objetivos específicos do projeto estão.
 
   <tr>
     <td>checkpoints.py</td>
-    <td>Módulo responsável por salvar pesos e os históricos das métricas do modelo em execução. WeightsCheckpoint e HistoryCheckpoint são classes que extendem a classe keras.callbacks.Callback. Os pesos e históricos são salvados a cada 100 épocas. Esta configuração pode ser alterada diretamente no módulo checkpoints.</td>
+    <td>Módulo responsável por salvar pesos e os históricos das métricas do modelo em execução. WeightsCheckpoint e HistoryCheckpoint são classes que extendem a classe keras.callbacks.Callback. Os pesos e históricos são salvos a cada 100 épocas. Esta configuração pode ser alterada diretamente no módulo checkpoints.</td>
   </tr>
 
   <tr>
@@ -139,7 +139,7 @@ O código abaixo é um exemplo de configuração de experimento. O exemplos ilus
 }
 ```
 
-As chaves e valores são mmostrados a seguir:
+As chaves e valores são mostrados a seguir:
 
 <table>
   <tr>
@@ -257,7 +257,7 @@ $ source venv/bin/activate
 
 Note: Este passo pode ser ignorado caso não possua uma ambiente virtual. Ambientes virtuais são recomendados para a execução de aplicações em python.
 
-Com o virtual enviroment criado e sendo executa será necessário baixar as bibliotecas presentes no requeriments.txt. Para isso basta utilizar o pip3 para fazer a instalação recursiva de todas as bibliotecas presentes no arquivo de texto. Certifique-se que o shell está no diretório do requeriments. Recomenda-se a utilização da execução em super usuário utilizando sudo.
+Com o virtual enviroment criado, será necessário baixar as bibliotecas presentes no requeriments.txt. Para isso basta utilizar o pip3 para fazer a instalação recursiva de todas as bibliotecas presentes no arquivo de texto. Certifique-se que o shell está no diretório do requeriments. Recomenda-se a utilização da execução em super usuário utilizando sudo.
 
 ```bash
 # Install all requeriments
@@ -322,7 +322,7 @@ A aplicação usa os seguintes algoritmos:
 
 * [AlexNet](https://dl.acm.org/doi/10.1145/3065386) - Rede convolucional com 8 camadas pioneira no uso de GPU para o seu treinamento
 * [ResNet](https://arxiv.org/abs/1512.03385) - Rede convolucional com o uso de blocos residuais. Rede super profunda.
-* [MobileNet](https://arxiv.org/abs/1704.04861) - Rede Convolucional com para dispotivos moveis ou com restrições computacionais.
+* [MobileNet](https://arxiv.org/abs/1704.04861) - Rede Convolucional com para dispositivos móveis ou com restrições computacionais.
 * [Autoencoder para redução de dimensionalidade](http://www.mitpressjournals.org/doi/10.1162/neco.2006.18.7.1527) - Rede Autoencoder especializada em reduzir a dimensionalidade dos dados.
 * [Autoencoder de filtragem de ruído](https://dl.acm.org/doi/10.1145/1390156.1390294) - Rede Autoencoder especializada em filtrar ruídos do dados.
 
