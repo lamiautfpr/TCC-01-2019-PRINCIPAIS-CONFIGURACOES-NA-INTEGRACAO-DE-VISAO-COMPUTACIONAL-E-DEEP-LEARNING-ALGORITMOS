@@ -1,3 +1,4 @@
+import numpy as np
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.regularizers import l2
@@ -37,6 +38,8 @@ class FactoryModel:
             self.model = Resnet34(input_shape=size, name=nick)
         elif name == 'autoencoder':
             self.model = DeepAutoencoder(name=nick)
+        elif name == 'mobilenet':
+            self.model = MobileNet(input_shape=size, name=nick)
         elif name == 'test':
             self.model = ModelTest(name=nick)
             
@@ -360,14 +363,61 @@ class DeepAutoencoder(BaseModel):
     def __call__(self):
         return (self.model, self.encoder())
 
+class MobileNet(BaseModel):
+    def __init__(self, input_shape=(28,28,1), name='model'):
+        self.input_shape = input_shape
+        self.name = name
+
+    def SeparableConv(x, num_filters, strides, alpha=1.0):
+        x = tf.keras.layers.DepthwiseConv2D(kernel_size=3, padding='same')(x)
+        x = tf.keras.layers.BatchNormalization(momentum=0.9997)( x )
+        x = tf.keras.layers.Activation( 'relu' )( x )
+        x = tf.keras.layers.Conv2D( np.floor( num_filters * alpha ) , kernel_size=( 1 , 1 ) , strides=strides , use_bias=False , padding='same' )( x )
+        x = tf.keras.layers.BatchNormalization(momentum=0.9997)(x)
+        x = tf.keras.layers.Activation('relu')(x)
+
+        return x
+
+    def Conv( x , num_filters , kernel_size , strides=1 , alpha=1.0 ):
+        x = tf.keras.layers.Conv2D( np.floor( num_filters * alpha ) , kernel_size=kernel_size , strides=strides , use_bias=False , padding='same' )( x )
+        x = tf.keras.layers.BatchNormalization( momentum=0.9997 )(x)
+        x = tf.keras.layers.Activation('relu')(x)
+        return x
+    
+    def build(self):
+        inputs = tf.keras.layers.Input( shape=self.input_shape)
+
+        x = self.Conv(inputs , num_filters=32 , kernel_size=3 , strides=2 )
+        x = self.SeparableConv( x , num_filters=32 , strides=1 )
+        x = self.Conv( x , num_filters=64 , kernel_size=1 )
+        x = self.SeparableConv( x , num_filters=64 , strides=1  )
+        x = self.Conv( x , num_filters=128 , kernel_size=1 )
+        x = self.SeparableConv( x , num_filters=128 , strides=1  )
+        x = self.Conv( x , num_filters=128 , kernel_size=1 )
+        x = self.SeparableConv( x , num_filters=128 , strides=1  )
+        x = self.Conv( x , num_filters=256 , kernel_size=1 )
+        x = self.SeparableConv( x , num_filters=256 , strides=1  )
+        x = self.Conv( x , num_filters=256 , kernel_size=1 )
+        x = self.SeparableConv( x , num_filters=256 , strides=1  )
+        x = self.Conv( x , num_filters=512 , kernel_size=1 )
+
+
+        x = self.SeparableConv(x, num_filters=512 , strides=2 )
+        x = self.Conv(x, num_filters=1024 , kernel_size=1 )
+        x = tf.keras.layers.AveragePooling2D( pool_size=( 7 , 7 ) )( x )
+        x = tf.keras.layers.Flatten()( x )
+        x = tf.keras.layers.Dense( 10 )( x )
+        outputs = tf.keras.layers.Activation( 'softmax' )( x )
+
+        self.model = tf.keras.Model(inputs=inputs, outputs=outputs, name=self.name)
+
+
 class ModelTest(BaseModel):
     def __init__(self, name):
         self.model = Sequential([
             Flatten(input_shape=(28,28,1)),
             Dense(10, activation='softmax', bias_initializer='ones')
         ], name=name)
-
-        
 
 
 if __name__ == '__main__':

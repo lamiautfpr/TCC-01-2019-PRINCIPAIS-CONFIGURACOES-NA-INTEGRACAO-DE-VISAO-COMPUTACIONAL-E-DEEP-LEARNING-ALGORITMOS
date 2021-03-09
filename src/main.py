@@ -1,5 +1,4 @@
 from experiment import Experiment
-from dataset import DatasetFactory
 import json
 import sys
 
